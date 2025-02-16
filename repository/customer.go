@@ -3,7 +3,7 @@ package repository
 // repository จัดการ data, ดึง data ยังไง ก็พอ ไม่ต้องสนใจเรื่อง business logic ใดๆ
 // เช่นกำหนด data มี interface อะไรบ้าง
 
-// adapter is struct
+// data model for using in repository layer
 type Customer struct {
 	CustomerID  int    `db:"customer_id"`
 	Name        string `db:"name"`
@@ -14,6 +14,7 @@ type Customer struct {
 }
 
 // PORT is interface !!! -- ปลั้กนี้มีกี่ขา มี data อะไรบ้างมาเก็บใน repository นี้
+// spec
 type CustomerRepository interface {
 	GetAll() ([]Customer, error)
 	GetById(int) (*Customer, error) // ใช้ pointer เพราะถ้าไม่เจอ จะ return nil ได้

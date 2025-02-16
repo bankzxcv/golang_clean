@@ -10,6 +10,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// below here called adapter
 type customerHandler struct {
 	customerService service.CustomerService
 }

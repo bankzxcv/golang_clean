@@ -8,6 +8,7 @@ import (
 )
 
 // create database adapter class
+// adapter is struct
 type customerRepositoryDB struct {
 	db *sqlx.DB
 }
